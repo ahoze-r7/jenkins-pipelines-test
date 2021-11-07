@@ -32,11 +32,11 @@ jobs:
           repository: ahoze-r7/avidan-github-actions
           path: github-actions
           ref: refs/tags/v1
-      - name: run create-release-for-divvy-from-tag action
-        id: createReleaseForDivvyFromTagCompositeAction
-        uses: ./github-actions/create-release-for-divvy-from-tag
+      - name: run create-branch-type-from-tag
+        id: createBranchFromTagAction
+        uses: ./github-actions/create-branch-type-from-tag
         with:
-          releaseVersion: $RELEASE_VERSION
-          releaseHash: $RELEASE_HASH
+          tagName: $RELEASE_VERSION
+          tagCommitHash: $RELEASE_HASH
           gitUserName: "'alcide jenkins'"
           gitUserEmail: "'alcidejenkins@rapid7.com'"
